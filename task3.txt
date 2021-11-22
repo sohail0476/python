@@ -1,0 +1,39 @@
+def isPrime(number):
+    if number in {2, 3, 5, 7}:
+        return True
+    if number <= 2 or n%2 == 0:
+        return False
+    if number%3 == 0 or number%5 == 0:
+        return False
+    fir = int(number**0.5)
+    then = 5
+    while fir<= r:
+        if number%fir == 0 or number%(fir+2) == 0:
+            return False
+        fir += 6
+    return True
+
+def gen(nb):
+    yield nb
+    nb_str = str(nb)
+    for k in range(1, len(nb_str)):
+        yield int(nb_str[k:])
+        yield int(nb_str[:-k])
+
+def check(nb):
+    for t in gen(nb):
+        if not isPrime(t):
+            return False
+    return True
+
+c = s = 0
+# Don't check single digit primes
+i = 11
+while c < 11:
+    if check(i):
+        c += 1
+        s += i
+        print(i)
+    i += 2
+
+print('sum', s)

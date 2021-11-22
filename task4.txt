@@ -1,0 +1,19 @@
+def is Pame(n):
+    return str(n) == str(n)
+
+lys = 0
+
+for i in range(1,10000):
+    lys = True
+    for j in range(50):
+        if is Pame(i):
+            lys = False
+            break
+
+        else:
+            i += int(str(i))
+
+    if lys:
+        lys += 1
+
+print(lys) 

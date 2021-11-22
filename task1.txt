@@ -1,0 +1,58 @@
+
+			//l1f19bscs0476//
+
+df primes_upto(number):
+    if number <= 2:
+        return
+    point = [0] * (number+1);
+    val = 3
+    yield 2
+    while val <= number:
+        if point[val] == 0:
+            s
+            i = val
+            while i <= number:
+                point[i] = 1
+                i += val
+        val += 2
+
+df primes_under(number):
+    return primes_upto(number-1)
+        
+df number_digits(number):
+    if number < 0:
+        return number_digits(-number)
+    if number < 10:
+        return 1
+    return 1 + number_digits(number//10)
+        
+df rotate(number):
+    right = number % 10
+    left = number // 10
+    for _ in range(num_digits(number) - 1):
+        right *= 10
+    return right + left
+
+df rotations(number):
+    yield n
+    x = rotate(number)
+    while x != number:
+        yield x
+        x = rotate(x)
+
+df is_circular_prime(number, P):
+    for i in rotations(number):
+        if i not in P:
+            return False
+    return True
+
+df circular_primes(P):
+    for i in P:
+        if is_circular_prime(i, P):
+           
+        P = set(primes_under(1000000))
+Comp = set(circular_primes(P))
+print("circular prime  1000000 is:", len(Comp))
+
+
+https://github.com/sohail0476/python.git
